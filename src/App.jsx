@@ -8,10 +8,22 @@ import Navbar from './components/navbar/Navbar.jsx'
 import LeftBar from './components/leftBar/LeftBar.jsx'
 import RightBar from './components/rightBar/RightBar.jsx'
 
-import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
+
+
+import { createBrowserRouter, Navigate, Outlet, RouterProvider } from "react-router-dom";
 
 
 function App() {
+
+  const currentUser = true;
+
+  // Check to see if the user is logged in, and if not, navigate to login page
+  // eslint-disable-next-line react/prop-types
+  const ProtectedRoute = ({children}) => {
+    if(!currentUser)
+      return <Navigate to='/login'/>;
+    return children; 
+  }
 
   const Layout = ()=> {
     return <div>
@@ -25,9 +37,13 @@ function App() {
   }
 
   const router = createBrowserRouter([
-    {
+
+    { // Home page, if there is a valid account
       path: "/",
-      element: <Layout/ >,
+      element:(
+       <ProtectedRoute> 
+        <Layout/ >
+      </ProtectedRoute>),
       children:[
         {
           path:'/',
@@ -39,11 +55,13 @@ function App() {
         }
       ]
     },
-    {
+
+    { // Login page nav
       path: "/login",
       element: <Login />,
     },
-    {
+
+    { // Register page nav
       path: "/register",
       element: <Register />,
     },
