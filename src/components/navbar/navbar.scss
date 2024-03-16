@@ -2,7 +2,7 @@
     display: flex;
     justify-content:space-between;
     align-items: center;
-    padding: 15px 15px ;
+    padding: 15px 25px;
     height: 20px;
     background-color: hsl(0, 0%, 100%);
     border-bottom: 2px solid purple;
@@ -12,6 +12,7 @@
     .left{
         display: flex;
         align-items: center;
+        gap: 10px;
         span{
             font-weight: bold;
             font-size: 20px;
@@ -20,7 +21,7 @@
         .search{
             display: flex;
             align-items: center;
-            gap: 15px;
+            gap: 5px;
             border: 1px solid hsl(300, 3%, 46%);
             border-radius: 5px;
             padding: 3px;
@@ -34,9 +35,21 @@
     .right{
         display:flex;
         align-items: center;
-        user{
-            img{}
-            span{}
+        gap: 10px;
+        .user{
+            display:flex;
+            gap: 10px;
+            align-items: center;
+            img{
+                width: 30px;
+                height: 30px;
+                border-radius: 50%;
+                object-fit: cover ;
+            }
+            span{
+                font-style: italic;
+                font-stretch: expanded;
+            }
         }
     }
 }
