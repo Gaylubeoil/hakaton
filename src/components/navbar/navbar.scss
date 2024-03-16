@@ -14,11 +14,11 @@
     .left{
         display: flex;
         align-items: center;
-        gap: 10px;
-        span{
-            font-weight: bold;
-            font-size: 20px;
-            color: purple;
+        flex-direction: row;
+        gap: 11px;
+        img{
+            max-width: 100px;
+            height: auto;
         }
         .search{
             display: flex;

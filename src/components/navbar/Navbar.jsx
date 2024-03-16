@@ -1,5 +1,7 @@
 import "./navbar.scss";
 
+import Logo from "../../assets/logo.png";
+
 import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 import DarkModeOutlinedIcon from "@mui/icons-material/DarkModeOutlined";
 import GridViewOutlinedIcon from "@mui/icons-material/GridViewOutlined";
@@ -15,7 +17,7 @@ const Navbar = () => {
     <div className="navbar">
       <div className="left">
         <Link to="/home" style={{ textDecoration: "none" }}>
-          <span>HakatonLogo</span>
+          <img src={Logo} alt="JoinME Logo" />
         </Link>
         <HomeOutlinedIcon />
         <DarkModeOutlinedIcon />
