@@ -2,9 +2,9 @@
     display: flex;
     padding: 10px 5px;
     position: sticky;
-    background-color: white;
-    top: 52px;
-    height: calc(100vh - 80px);
+    background-color: #c34a12;
+    top: 72px;
+    height: calc(100vh - 90px);
 
     min-width: 250px;
 
@@ -29,7 +29,8 @@
                 }
                 span {
                     font-weight: bold;
-                    font-size: 17px;
+                    font-size: 22px;
+                    color: black;
                     
                 }
             }
@@ -51,6 +52,7 @@
                 }
                 span{
                     font-weight: bold;
+                    font-size: 20px;
                 }
             }
 

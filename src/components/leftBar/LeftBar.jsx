@@ -8,7 +8,7 @@ import NotificationOffIcon from "../../assets/notificationOff.svg";
 import RequestsIcon from "../../assets/requests.svg";
 import { Link } from "react-router-dom";
 
-import PropTypes from "prop-types";
+import { userPropTypes } from "../../PropTypesDefinitions";
 
 const LeftBar = ({ user }) => {
   return (
@@ -18,7 +18,7 @@ const LeftBar = ({ user }) => {
           <Link to={`/profile/${user.id}`} style={{ textDecoration: "none" }}>
             <div className="user">
               <img src={user.image} />
-              <span>Luben Lubenus</span>
+              <span>{user.username}</span>
             </div>
           </Link>
 
@@ -58,16 +58,7 @@ const LeftBar = ({ user }) => {
 };
 
 LeftBar.propTypes = {
-  user: PropTypes.shape({
-    id: PropTypes.number.isRequired,
-    username: PropTypes.string.isRequired,
-    email: PropTypes.string.isRequired,
-    trustScore: PropTypes.number.isRequired,
-    image: PropTypes.string.isRequired,
-    bio: PropTypes.string.isRequired,
-    followersCount: PropTypes.number.isRequired,
-    followingCount: PropTypes.number.isRequired,
-  }).isRequired,
+  user: userPropTypes,
 };
 
 export default LeftBar;

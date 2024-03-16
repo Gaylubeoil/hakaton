@@ -31,7 +31,7 @@ function App() {
 
   const dummyUser = {
     id: 11,
-    username: "Luben",
+    username: "Lubeeenn",
     email: "Luben@gmail.com",
     trustScore: 99,
     image:
@@ -44,7 +44,7 @@ function App() {
   const Layout = () => {
     return (
       <div className="theme-dark">
-        <Navbar />
+        <Navbar user={dummyUser} />
         <div className="mainLayout">
           <LeftBar user={dummyUser} />
           <Outlet />
