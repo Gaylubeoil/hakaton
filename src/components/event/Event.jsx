@@ -1,5 +1,8 @@
 import "./event.scss";
 import PropTypes from "prop-types";
+import MoreVertIcon from "@mui/icons-material/MoreVert";
+import { Link } from "react-router-dom";
+import FmdGoodIcon from "@mui/icons-material/FmdGood";
 
 const Event = ({ event }) => {
   const {
@@ -12,21 +15,47 @@ const Event = ({ event }) => {
     description,
     location,
     image,
+    date,
+    remainingTime,
     host,
-    //  comments,
+    comments,
   } = event;
+
   return (
     <div className="event">
-      <div>ID: {id}</div>
-      <div>Title: {title}</div>
-      <div>city: {city}</div>
-      <div>category: {category}</div>
-      <div>capacity: {capacity}</div>
-      <div>currentCapacity: {currentCapacity}</div>
-      <div>description: ${description}</div>
-      <div>location: {location}</div>
-      <div>image: {image}</div>
-      <div>host: {host.id}</div>
+      <div className="container">
+        <div className="user">
+          <div className="user-info">
+            <Link to={`/profile/${host.id}`}>
+              <img src={event.host.profilePicture} />
+            </Link>
+            <div className="details">
+              <Link
+                to={`/profile/${host.id}`}
+                style={{ textDecoration: "none", color: "inherit" }}>
+                <span className="name">{event.host.name}</span>
+              </Link>
+              <span className="remaining-time">{remainingTime} remain.</span>
+              <span className="remaining-time">{date}</span>
+            </div>
+          </div>
+          <div className="icons">
+            <FmdGoodIcon />
+            <MoreVertIcon />
+          </div>
+        </div>
+        <img className="event-image" src={image} />
+        <div className="title">{title}</div>
+        <div className="description">{description}</div>
+        <hr />
+        <div className="additional-info">
+          <div className="availible-slots">
+            Available spots: {currentCapacity}/{capacity}
+          </div>
+          <div className="category">Event category: {category}</div>
+          <div className="city">City: {city}</div>
+        </div>
+      </div>
     </div>
   );
 };
@@ -43,6 +72,7 @@ Event.propTypes = {
     location: PropTypes.string.isRequired,
     image: PropTypes.string.isRequired,
     date: PropTypes.string.isRequired,
+    remainingTime: PropTypes.string.isRequired,
     host: PropTypes.shape({
       id: PropTypes.number.isRequired,
       name: PropTypes.string.isRequired,

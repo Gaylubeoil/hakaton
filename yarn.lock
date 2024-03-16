@@ -1840,6 +1840,15 @@ react-router@6.22.3:
   dependencies:
     "@remix-run/router" "1.15.3"
 
+react-social-icons@^6.15.0:
+  version "6.15.0"
+  resolved "https://registry.npmjs.org/react-social-icons/-/react-social-icons-6.15.0.tgz"
+  integrity sha512-6KZK3tKwARhMNxhk7wzBWYD4bl9JhjMp1TE+S4TIDY+AE4ySXoW2AIaV3Dnh8GmABRBLE/v1sV2bMmzr68bjFw==
+  dependencies:
+    "@babel/runtime" "^7.23.8"
+    react "^18.2.0"
+    react-dom "^18.2.0"
+
 react@^18.2.0, react@>=16.8:
   version "18.2.0"
   resolved "https://registry.npmjs.org/react/-/react-18.2.0.tgz"

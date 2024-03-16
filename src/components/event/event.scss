@@ -1,3 +1,83 @@
 .event {
-    
+    background-color: white;
+    border-radius: 20px;
+    margin: 20px;
+    .container{
+        padding: 20px;
+        .user{
+            display: flex; 
+            align-items: center;
+            align-content: center;
+            justify-content: space-between;
+
+            .user-info{
+                display: flex;
+                gap: 20px;
+
+                img{
+                    width: 50px;
+                    height: 50px;
+                    border-radius: 50%;
+                    object-fit: cover;
+                }
+
+                .details{
+                    display: flex;
+                    flex-direction: column;   
+
+                    .name{
+                        font-size: 20px;
+                        margin-left: -5px;
+                    }
+
+                    .remaining-time{
+                         font-size: 12px;
+                    }
+                }
+            }
+            .icons{
+                margin-right: 2%;
+            }
+        }
+
+
+        .event-image{
+            margin-top: 2.5%;
+            width: 100%;
+            border-radius: 20px;
+            background-size: cover;
+        }
+        .title{
+            font-weight: bold;
+            margin-top: 2%;
+            margin-left: 3%;
+        }
+        .description{
+            margin-left: 5%;
+            margin-top: 1%;
+            margin-bottom: 2%;
+        }
+
+        .additional-info{
+            display: flex;
+            justify-content: space-evenly;
+            flex-direction: row;
+
+            font-size: 12px;
+
+            margin-top: 2%;
+
+            .available-slots{
+                font-weight: 500px;
+            }
+        }
+
+        .links{
+            display: flex;
+            justify-content: space-evenly;
+            flex-direction: row;
+            margin-top: 2%;
+        }
+
+    }
 }

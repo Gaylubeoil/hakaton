@@ -6,6 +6,7 @@
     top: 52px;
     height: calc(100vh - 80px);
     overflow: scroll;
+    min-width: 200px;
 
     .container{
         padding: 20px;
@@ -23,7 +24,6 @@
                     object-fit: cover;
                     border-radius: 50%;
                 }
-                span{}
             }
 
         }
