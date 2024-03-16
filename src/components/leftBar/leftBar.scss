@@ -1,6 +1,11 @@
 .leftBar{
     display: flex;
     padding: 10px 5px;
+    position: sticky;
+    background-color: white;
+    top: 70px;
+    height: calc(100vh - 70px);
+
     .container{
         padding: 20px;
         align-items: center;
