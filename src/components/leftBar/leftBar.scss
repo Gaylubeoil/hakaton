@@ -13,7 +13,7 @@
         flex-direction: column;
         .menu{
             gap: 20px;            
-            .user{
+            .menuComponent{
                 display:flex;
                 gap: 10px;
                 align-items: center;
@@ -25,17 +25,7 @@
                 }
                 span{}
             }
-            
-            .followers{
-                display: flex;
-                align-items: center;
-                gap: 10px;
-                img{
-                    width: 35px;
-                    height: 35px;
-                }
-                span{}
-            }
+
         }
     }
 }
