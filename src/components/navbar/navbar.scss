@@ -4,7 +4,7 @@
     align-items: center;
     padding: 15px 25px;
     height: 20px;
-    background-color: hsl(0, 0%, 100%);
+    background-color:hsl(0, 0%, 100%);
     border-bottom: 2px solid hsl(0, 0%, 75%);
     position: sticky;
     top: 0px;
@@ -14,11 +14,12 @@
     .left{
         display: flex;
         align-items: center;
-        flex-direction: row;
-        gap: 11px;
-        img{
+        gap: 10px;
+        img {
             max-width: 100px;
             height: auto;
+            margin-right: 5px;
+            margin-bottom: 5px;
         }
         .search{
             display: flex;

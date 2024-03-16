@@ -17,6 +17,7 @@ const Navbar = () => {
     <div className="navbar">
       <div className="left">
         <Link to="/home" style={{ textDecoration: "none" }}>
+          <div className="gradient-overlay"></div>
           <img src={Logo} alt="JoinME Logo" />
         </Link>
         <HomeOutlinedIcon />

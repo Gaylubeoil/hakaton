@@ -23,13 +23,17 @@ const LeftBar = () => {
           </div>
 
           <div className="menuComponent">
-            <img src="" alt=""></img>
+            <img src="" alt="" />
             <span>Events</span>
           </div>
 
           <div className="menuComponent">
-            <img src="" alt=""></img>
+            <img src="" alt="" />
             <span>Requests</span>
+          </div>
+          <div className="menuComponent">
+            <img src="" alt="" />
+            <span>Notifications</span>
           </div>
           <hr />
           <div className="filtter">
