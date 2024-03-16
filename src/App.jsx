@@ -27,12 +27,26 @@ function App() {
     return children;
   };
 
+  //const user = fetch.
+
+  const dummyUser = {
+    id: 11,
+    username: "Luben",
+    email: "Luben@gmail.com",
+    trustScore: 99,
+    image:
+      "https://images.pexels.com/photos/19056314/pexels-photo-19056314/free-photo-of-ess-in-the-woods.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    bio: "A very nice bio",
+    followersCount: 0,
+    followingCount: 1,
+  };
+
   const Layout = () => {
     return (
       <div className="theme-dark">
         <Navbar />
         <div className="mainLayout">
-          <LeftBar />
+          <LeftBar user={dummyUser} />
           <Outlet />
           <RightBar />
         </div>
