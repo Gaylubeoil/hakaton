@@ -3,8 +3,9 @@
     padding: 10px 5px;
     position: sticky;
     background-color: white;
-    top: 70px;
-    height: calc(100vh - 70px);
+    top: 52px;
+    height: calc(100vh - 80px);
+    overflow: scroll;
 
     .container{
         padding: 20px;
