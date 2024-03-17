@@ -18,40 +18,40 @@ const CreateEvent = ({ user }) => {
 
   return (
     <div className="createEvent">
-      <input type="text" placeholder="Create event" />
-      {showPopup && (
-        <div className="popup">
-          {/* Inputs for creating a new post */}
-          <input type="text" placeholder="Title" />
-          <textarea placeholder="Write your post here..." />
-          <button onClick={togglePopup}>Submit</button>
-        </div>
-      )}
-      {/* <div className="container">
+      <div className="container">
         <img src={user.image} alt="" />
+        <input type="text" placeholder="Create event.." onClick={togglePopup} />
+        {showPopup && (
+          <div className="modal">
+            <div className="modal-content">
+              <input className="title" type="text" placeholder="Title" />
+              <textarea className="text-area" placeholder="Description..." />
+              <textarea className="text-area" placeholder="City.." />
+              <textarea className="text-area" placeholder="Event Capacity.." />
+              <textarea className="text-area" placeholder="Location Link.." />
+              <textarea className="text-area" placeholder="Date.." />
 
-        <div className="data-input">
-          <input type="text" placeholder="Create Event.." />
-          <input type="text" placeholder="City.." />
-          <input type="text" placeholder="Event capacity.." />
-          <input type="text" placeholder="Description .." />
-          <input type="text" placeholder="Maps link.." />
-          <input type="text" placeholder="Date.." />
-          <input type="text" placeholder="Remaining time.." />
-        </div>
-        <div className="customPic">
-          <input
-            type="file"
-            accept="image/*" // Allow only image files
-            onChange={handleFileChange}
-          />
-          {selectedFile && (
-            <div>
-              <img src={URL.createObjectURL(selectedFile)} alt="Selected" />
+              <div className="image-input">
+                <input
+                  type="file"
+                  accept="image/*" // Allow only image files
+                  onChange={handleFileChange}
+                />
+                {selectedFile && (
+                  <div>
+                    <img
+                      src={URL.createObjectURL(selectedFile)}
+                      alt="Selected"
+                    />
+                  </div>
+                )}
+              </div>
+
+              <button onClick={togglePopup}>Submit</button>
             </div>
-          )}
-        </div>
-      </div> */}
+          </div>
+        )}
+      </div>
     </div>
   );
 };

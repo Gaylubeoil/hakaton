@@ -48,9 +48,9 @@ const Events = () => {
       description:
         "A nice description of the current event. It's pretty long and kinda boring, but you'll have to kindly sit though it since I need to fill just a bit more space to see how descriptions react to being longer. Thank you<3.",
       location:
-        "https://www.google.bg/maps/dir//42.6674403,23.3162753/@42.6668802,23.3162002,17z?hl=bg",
+        "https://www.google.com/maps/d/viewer?mid=17-mWPBv1rYLCmKxan6vTF866LG0&hl=bg&ll=42.57832843669542%2C23.037228589865&z=13",
       image:
-        "https://images.pexels.com/photos/194511/pexels-photo-194511.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        "https://images.pexels.com/photos/278918/pexels-photo-278918.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
       date: "21.10.2024",
       remainingTime: "2 hours",
       host: {

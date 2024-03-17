@@ -70,7 +70,7 @@ function App() {
         },
         {
           path: "/profile/:id",
-          element: <Profile />,
+          element: <Profile user={dummyUser} />,
         },
       ],
     },

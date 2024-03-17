@@ -3,6 +3,8 @@ import PropTypes from "prop-types";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import { Link } from "react-router-dom";
 import FmdGoodIcon from "@mui/icons-material/FmdGood";
+import React, { useState } from "react";
+import ModeCommentOutlinedIcon from "@mui/icons-material/ModeCommentOutlined";
 
 const Event = ({ event }) => {
   const {
@@ -20,6 +22,26 @@ const Event = ({ event }) => {
     host,
     comments,
   } = event;
+
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleDropdown = () => {
+    setIsOpen(!isOpen);
+  };
+
+  // Close the dropdown when clicking outside of it
+  const handleOutsideClick = (ev) => {
+    if (!ev.target.closest(".dropdown")) {
+      setIsOpen(false);
+    }
+  };
+
+  React.useEffect(() => {
+    window.addEventListener("click", handleOutsideClick);
+    return () => {
+      window.removeEventListener("click", handleOutsideClick);
+    };
+  }, []);
 
   return (
     <div className="event">
@@ -40,20 +62,27 @@ const Event = ({ event }) => {
             </div>
           </div>
           <div className="icons">
-            <FmdGoodIcon />
-            <MoreVertIcon />
+            <Link to={location}>
+              <FmdGoodIcon />
+            </Link>
+            <MoreVertIcon onClick={toggleDropdown} />
           </div>
         </div>
         <img className="event-image" src={image} />
         <div className="title">{title}</div>
         <div className="description">{description}</div>
-        <hr />
         <div className="additional-info">
           <div className="availible-slots">
             Available spots: {currentCapacity}/{capacity}
           </div>
           <div className="category">Event category: {category}</div>
           <div className="city">City: {city}</div>
+        </div>
+        <hr />
+
+        <div className="comments">
+          <ModeCommentOutlinedIcon />
+          <span>Comments</span>
         </div>
       </div>
     </div>
