@@ -3,12 +3,15 @@ import PropTypes from "prop-types";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import { Link } from "react-router-dom";
 import FmdGoodIcon from "@mui/icons-material/FmdGood";
-import React, { useState } from "react";
+import { useState } from "react";
 import ModeCommentOutlinedIcon from "@mui/icons-material/ModeCommentOutlined";
+
+import Menu from "@mui/material/Menu";
+import MenuItem from "@mui/material/MenuItem";
+import IconButton from "@mui/material/IconButton";
 
 const Event = ({ event }) => {
   const {
-    id,
     title,
     city,
     category,
@@ -20,28 +23,17 @@ const Event = ({ event }) => {
     date,
     remainingTime,
     host,
-    comments,
   } = event;
 
-  const [isOpen, setIsOpen] = useState(false);
+  const [anchorEl, setAnchorEl] = useState(null);
 
-  const toggleDropdown = () => {
-    setIsOpen(!isOpen);
+  const handleClick = (ev) => {
+    setAnchorEl(ev.currentTarget);
   };
 
-  // Close the dropdown when clicking outside of it
-  const handleOutsideClick = (ev) => {
-    if (!ev.target.closest(".dropdown")) {
-      setIsOpen(false);
-    }
+  const handleClose = () => {
+    setAnchorEl(null);
   };
-
-  React.useEffect(() => {
-    window.addEventListener("click", handleOutsideClick);
-    return () => {
-      window.removeEventListener("click", handleOutsideClick);
-    };
-  }, []);
 
   return (
     <div className="event">
@@ -65,7 +57,23 @@ const Event = ({ event }) => {
             <Link to={location}>
               <FmdGoodIcon />
             </Link>
-            <MoreVertIcon onClick={toggleDropdown} />
+            <IconButton
+              aria-controls="dropdown-menu"
+              aria-haspopup="true"
+              onClick={handleClick}>
+              <MoreVertIcon />
+            </IconButton>
+            <Menu
+              id="dropdown-menu"
+              anchorEl={anchorEl}
+              open={Boolean(anchorEl)}
+              onClose={handleClose}>
+              <MenuItem onClick={handleClose}>Save</MenuItem>
+              <MenuItem onClick={handleClose}>Share</MenuItem>
+              <MenuItem onClick={handleClose}>View Profile</MenuItem>
+              <MenuItem onClick={handleClose}>Report</MenuItem>
+              <MenuItem onClick={handleClose}>Block User</MenuItem>
+            </Menu>
           </div>
         </div>
         <img className="event-image" src={image} />
@@ -80,9 +88,15 @@ const Event = ({ event }) => {
         </div>
         <hr />
 
-        <div className="comments">
-          <ModeCommentOutlinedIcon />
-          <span>Comments</span>
+        <div className="join-comments">
+          <button type="button" className="green-button">
+            Join Event
+          </button>
+
+          <div className="comments">
+            <ModeCommentOutlinedIcon />
+            <span>Comments</span>
+          </div>
         </div>
       </div>
     </div>

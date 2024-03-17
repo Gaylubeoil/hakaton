@@ -7,6 +7,21 @@ const CreateEvent = ({ user }) => {
   const [selectedFile, setSelectedFile] = useState(null);
   const [showPopup, setShowPopup] = useState(false);
 
+  const [eventData, setEventData] = useState({
+    title: "",
+    city: "",
+    category: "",
+    capacity: 0,
+    currentCapacity: 0,
+    description: "",
+    location: "",
+    image: "",
+    date: "",
+    remainingTime: "",
+    host: user,
+    comments: [],
+  });
+
   const handleFileChange = (event) => {
     const file = event.target.files[0];
     setSelectedFile(file);
@@ -20,7 +35,11 @@ const CreateEvent = ({ user }) => {
     <div className="createEvent">
       <div className="container">
         <img src={user.image} alt="" />
-        <input type="text" placeholder="Create event.." onClick={togglePopup} />
+        <input
+          type="text"
+          placeholder="Create event..."
+          onClick={togglePopup}
+        />
         {showPopup && (
           <div className="modal">
             <div className="modal-content">
