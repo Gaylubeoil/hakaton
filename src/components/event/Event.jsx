@@ -121,16 +121,6 @@ Event.propTypes = {
       name: PropTypes.string.isRequired,
       profilePicture: PropTypes.string.isRequired,
     }).isRequired,
-    comments: PropTypes.arrayOf(
-      PropTypes.shape({
-        user: PropTypes.shape({
-          id: PropTypes.number.isRequired,
-          name: PropTypes.string.isRequired,
-          profilePicture: PropTypes.string.isRequired,
-        }).isRequired,
-        comment: PropTypes.string.isRequired,
-      })
-    ).isRequired,
   }).isRequired,
 };
 
