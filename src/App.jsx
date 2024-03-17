@@ -18,12 +18,12 @@ import {
 } from "react-router-dom";
 
 function App() {
-  const currentUser = true;
+  const authenticate = true;
 
   // Check to see if the user is logged in, and if not, navigate to login page
   // eslint-disable-next-line react/prop-types
   const ProtectedRoute = ({ children }) => {
-    if (!currentUser) return <Navigate to="/login" />;
+    if (!authenticate) return <Navigate to="/login" />;
     return children;
   };
 
@@ -66,7 +66,7 @@ function App() {
       children: [
         {
           path: "/",
-          element: <Home />,
+          element: <Home user={dummyUser} />,
         },
         {
           path: "/profile/:id",

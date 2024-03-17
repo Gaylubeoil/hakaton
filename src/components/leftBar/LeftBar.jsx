@@ -4,7 +4,6 @@ import FollowersIcon from "../../assets/followers.svg";
 import FollowingIcon from "../../assets/following.svg";
 import EventsIcon from "../../assets/events.svg";
 import NotificationOnIcon from "../../assets/notificationOn.svg";
-import NotificationOffIcon from "../../assets/notificationOff.svg";
 import RequestsIcon from "../../assets/requests.svg";
 import { Link } from "react-router-dom";
 
@@ -43,10 +42,12 @@ const LeftBar = ({ user }) => {
             <img src={RequestsIcon} alt="" />
             <span>Requests</span>
           </div>
+
           <div className="menuComponent">
             <img src={NotificationOnIcon} alt="" />
             <span>Notifications</span>
           </div>
+
           <hr />
           <div className="filtter">
             <h3>Filtters</h3>
