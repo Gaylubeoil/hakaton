@@ -25,6 +25,7 @@ const Event = ({ event }) => {
     host,
   } = event;
 
+  const [cap, setCap] = useState(currentCapacity);
   const [anchorEl, setAnchorEl] = useState(null);
 
   const handleClick = (ev) => {
@@ -34,6 +35,12 @@ const Event = ({ event }) => {
   const handleClose = () => {
     setAnchorEl(null);
   };
+
+  const onJoinEvent = () => {
+    if (cap < capacity)
+      setCap(cap + 1);
+    console.log(cap); 
+  }
 
   return (
     <div className="event">
@@ -80,16 +87,16 @@ const Event = ({ event }) => {
         <div className="title">{title}</div>
         <div className="description">{description}</div>
         <div className="additional-info">
-          <div className="availible-slots">
-            Available spots: {currentCapacity}/{capacity}
+          <div className="available-slots">
+            Taken spots: {cap}/{capacity}
           </div>
           <div className="category">Event category: {category}</div>
           <div className="city">City: {city}</div>
         </div>
         <hr />
 
-        <div className="join-comments">
-          <button type="button" className="green-button">
+        <div className="join-comments"> 
+          <button type="button" className="green-button" onClick={onJoinEvent}>
             Join Event
           </button>
 

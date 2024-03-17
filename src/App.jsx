@@ -30,13 +30,13 @@ function App() {
   //const user = fetch.
 
   const dummyUser = {
-    id: 11,
-    username: "Lubeeenn",
-    email: "Luben@gmail.com",
-    trustScore: 99,
+    id: 1,
+    username: "Andrey",
+    email: "andrey@gmail.com",
+    trustScore: 12,
     image:
-      "https://images.pexels.com/photos/19056314/pexels-photo-19056314/free-photo-of-ess-in-the-woods.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-    bio: "A very nice bio",
+      "https://images.pexels.com/photos/16771330/pexels-photo-16771330/free-photo-of-portrait-of-a-brunette-woman-in-a-park.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    bio: "Hi im Andrew this is a nice bio.",
     followersCount: 0,
     followingCount: 1,
   };

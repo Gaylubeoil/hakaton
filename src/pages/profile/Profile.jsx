@@ -4,6 +4,8 @@ import { userPropTypes } from "../../PropTypesDefinitions.js";
 import { SocialIcon } from "react-social-icons";
 
 const Profile = ({ user }) => {
+  
+
   return (
     <div className="profile">
       <img src={user.image} className="profile" />
