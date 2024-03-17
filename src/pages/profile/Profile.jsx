@@ -22,6 +22,7 @@ const Profile = ({ user }) => {
           <SocialIcon url="https://discord.com" />
           <SocialIcon url="https://facebook.com" />
           <SocialIcon url="https://reddit.com" />
+          <SocialIcon url="https://twitter.com" />
         </div>
       </div>
     </div>
