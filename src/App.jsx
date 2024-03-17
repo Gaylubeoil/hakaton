@@ -48,7 +48,6 @@ function App() {
         <div className="mainLayout">
           <LeftBar user={dummyUser} />
           <Outlet />
-          <RightBar />
         </div>
       </div>
     );
